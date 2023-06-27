@@ -1,0 +1,95 @@
+@use "../../utils/mixin" as *;
+@use '../../utils/varaible' as *;
+@use '../../utils/extend' as *;
+main{
+    #seo-services{
+        margin-top: 130px;
+        .container{
+            .row{
+                @include Flexible($justify-c:space-around,$gap:5px);
+                h2{
+                    text-align: center;
+                    @include Text($color:$font-color-default,$weight:$font-weight-600,$size:33px,$margin:0 0 20px 0);
+                    span{
+                        color: $font-color-primary;
+                    }
+                }
+                p{
+                    text-align: center;
+                    @include Text($color:$font-color-grey,$weight:$font-weight-400,$size:16px);
+                }
+                .col-xl-2{
+                    &:hover .overlay{
+                        height: 100%;
+                        color: white;
+                    }
+                    &:hover.col-xl-2 .texts h3{
+                        color: white !important;
+                    }
+                    &:hover.col-xl-2 .texts h4{
+                        color: white !important;
+                    }
+                    &:hover.col-xl-2 .texts a{
+                        color: white !important;
+                    }
+                    .overlay{
+                        position: absolute;
+                        background-color: $font-color-primary;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        width: 100%;
+                        height: 0;
+                        transition: 0.5s ease-in-out;
+                    }
+                    position: relative;
+                    box-shadow: 0px 0px 12px 0px rgb(223, 220, 220);
+                    height: 350px;
+                    margin-top: 100px;
+                    padding: 30px 5px;
+                            background-color: $font-color-white;
+                            border-bottom: 3px solid $font-color-primary;
+                            .texts{
+                                
+                                margin-top: 30px;
+                                @include Flexible($direction:column,$align-i:center,$justify-c:center);
+                                i{
+                                    color: $font-color-primary;
+                                    font-size: 32px;
+                                    position: relative;
+                                    z-index: 9999;
+                                    margin-bottom: 30px;
+                                    &::after{
+                                        position: absolute;
+                                content: "";
+                                width: 70px;
+                                height: 70px;
+                                background-color: rgb(232, 232, 245);
+                                border-radius: 50%;
+                                top: -17px;
+                                left: -20px;
+                                z-index: -9999;
+                                    }
+                                }
+                                h3{
+                                    z-index: 9999;
+                                    transition: 0.5s ease-in-out;
+                                    @include Text($color:$font-color-default,$weight:$font-weight-600,$size:16px,$margin:25px 0 0 0);  
+                                }
+                                h4{
+                                    z-index: 9999;
+                                    transition: 0.5s ease-in-out;
+                                    @include Text($color:$font-color-grey,$weight:$font-weight-400,$size:14px,$margin:17px 0 15px 0,$align:center,$line-h:20px); 
+                                    max-width: 140px;
+                                }
+                                a{
+                                    z-index: 9999;
+                                    transition: 0.5s ease-in-out;
+                                    @include Text($decoration:none,$color:rgb(199, 197, 197),$size:15px,$margin:10px 0 0 0);
+                                }
+                            }
+                }
+            }
+        }
+    }
+}

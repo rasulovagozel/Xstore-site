@@ -1,0 +1,44 @@
+@mixin Flexible($wrap:null,$justify-c:null,$align-i:null,$direction:null,$gap:null){
+    display: flex;
+    flex-wrap: $wrap;
+    justify-content:$justify-c;
+    align-items:$align-i;
+    flex-direction:$direction;
+    gap:$gap;
+    }
+    
+    @mixin Image($width:null,$height:null,$object-fit:null){
+        width: $width;
+        height: $height;
+        object-fit: $object-fit;
+    }
+    @mixin Bg_Image($width:null,$height:null,$size:null,$repeat:null,$position:null){
+        width: $width;
+        height: $height;
+        background-size: $size;
+        background-repeat: $repeat;
+        background-position: $position;
+    }
+    @mixin Text($max-width:null,$width:null,$padding:null,$margin:null,$size:null,$weight:null,$style:null,$family:null,$line-h:null,$word-s:null,$decoration:null,$transform:null,$color:null,$align:null){
+    max-width:$max-width;
+    width:$width ;
+    padding:$padding;
+    margin:$margin;
+    font-size:$size;
+    font-weight:$weight;
+    font-style:$style;
+    font-family:$family;
+    line-height:$line-h;
+    word-spacing:$word-s;
+    text-decoration:$decoration;
+    text-transform: $transform;
+    color: $color;
+    text-align: $align;
+    }
+    @mixin Position($position:null,$top:null,$bottom:null,$left:null,$right:null){
+        position: $position;
+        top: $top;
+        bottom: $bottom;
+        left: $left;
+        right: $right;
+    }

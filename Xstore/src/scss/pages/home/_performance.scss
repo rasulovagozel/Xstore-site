@@ -1,0 +1,49 @@
+@use "../../utils/mixin" as *;
+@use '../../utils/varaible' as *;
+@use '../../utils/extend' as *;
+main{
+    #performance{
+        margin-top: 130px;
+        .container{
+            font-family: $font-family;
+        .row{
+            @include Flexible($gap:30px);
+        .col-lg-5{
+            .texts{
+                h4{
+                    @include Text($color:$font-color-primary,$weight:$font-weight-500,$size:14px,$margin:0 0 20px 0);
+                }
+                h3{
+                    @include Text($color:$font-color-default,$weight:$font-weight-600,$size:36px,$margin:0 0 20px 0,$line-h:40px);
+                    span{
+                        color: $font-color-primary;
+                    }
+                }
+                p{
+                    @include Text($color:$font-color-grey,$weight:$font-weight-400,$size:13px,$margin:0 0 40px 0,$line-h:25px);
+                    max-width: 430px;
+                }
+                .numbers{
+                    @include Flexible($justify-c:space-around,$align-i:center);
+                    .percent,.number{
+                        @include Flexible($align-i:center,$direction:column);
+                     h2{
+                        @include Text($color:$font-color-primary,$weight:$font-weight-700,$size:40px,$margin:0 0 8px 0,$line-h:25px); 
+                     }
+                     a{
+                        @include Text($color:$font-color-grey,$weight:$font-weight-400,$size:13px,$margin:0 0 40px 0,$line-h:25px,$decoration:none); 
+                     }
+                    }
+                }
+            }
+        }
+        .col-lg-5{
+            img{
+                max-width: 500px;
+                object-fit: cover;
+            }
+        }
+        }
+    }
+ }
+}

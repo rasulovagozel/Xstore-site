@@ -1,0 +1,84 @@
+@use "../../utils/mixin" as *;
+@use '../../utils/varaible' as *;
+@use '../../utils/extend' as *;
+nav{
+    .container{
+        font-family: $font-family;
+        margin: 0 auto;
+        .row{
+            @include Flexible($align-i:center);
+            margin-top: 30px;
+            .col-lg-3{
+                .logo{
+                    img{
+                        max-width: 130px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .col-lg-6{
+                .lists{
+                    ul{
+                        display: flex;
+                        li{
+                           a{
+                            position: relative;
+                            @include Text($decoration:none,$color:$font-color-default,$weight:$font-weight-500,$size:$font-size-navbar,$margin:0 30px 0 0);
+                            &::after{
+                            transition: 0.3s ease-in-out;
+                            content: "";
+                            position: absolute;
+                            width: 0;
+                            height: 2px;
+                            bottom: 0;
+                            left: 0;
+                            background-color: $font-color-primary;
+                           }
+                           &:hover::after{
+                            width: 100%;
+                           }
+                           }
+                           
+                           .homenav{
+                            color: $font-color-primary;
+                           }
+                        }
+                    }
+                    @media(max-width:998px){
+                        ul{
+                            display: none;
+                        }
+                        
+                    }
+                }
+            }
+            .col-lg-3{
+                .login{
+                    a{
+                        @include Text($decoration:none,$color:$font-color-default,$weight:$font-weight-600,$size:$font-size-navbar,$padding:0 30px 0 0);
+                        transition: 0.3s ease-in-out;
+                        &:hover{
+                            color: $font-color-grey
+                        }
+                    }
+                    button{
+                        @extend %button;
+                        background-color: $font-color-primary;
+                        font-size: $font-size-navbar;
+                        font-weight: $font-weight-600;
+                        transition: 0.3s ease-in-out;
+                        &:hover{
+                            background-color: $font-color-default;
+                        }
+                    }
+                    @media(max-width:1220px){
+                        button{
+                            width: 100px;
+                        }
+                        }
+                }
+                
+            }
+        }
+    }
+}

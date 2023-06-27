@@ -1,0 +1,32 @@
+@use "../../utils/mixin" as *;
+@use '../../utils/varaible' as *;
+@use '../../utils/extend' as *;
+main{
+    #logos{
+        margin-top: 270px;
+        .container{
+            margin: 0 auto;
+            font-family: $font-family;
+            .row{
+                @include Flexible($justify-c:space-around);
+                .col-xl-1{
+                    img{
+                        opacity: 0.35;
+                        max-width: 130px;
+                        transition: 0.3s;
+                        &:hover{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:1220px){
+main{
+    #logos{
+        margin-top: 400px;
+    }
+}
+}

@@ -1,0 +1,123 @@
+@use "../../utils/mixin" as *;
+@use '../../utils/varaible' as *;
+@use '../../utils/extend' as *;
+main{
+    #home{
+    .container{
+    font-family: $font-family;
+    .row{
+        margin-top: 130px;
+        @include Flexible($gap:50px);
+    .col-xl-5{
+        h3{
+            @include Text($color:$font-color-text,$weight:$font-weight-400,$size:16px,$margin:0 0 20px 0);
+        }
+        h2{
+            @include Text($color:$font-color-default,$weight:$font-weight-600,$size:58px,$margin:0 0 20px 0,$line-h:60px);
+            max-width: 350px;
+            span{
+                color: $font-color-primary;
+            }
+        }
+        p{
+            @include Text($color:$font-color-grey,$weight:$font-weight-400,$size:16px,$margin:0 0 20px 0);  
+            max-width: 420px;
+        }
+        .buttons{
+            @include Flexible($align-i:center,$gap:30px);
+            .button1{
+                position: relative;
+                &:hover .overlay{
+                    width: 100%;
+                   }
+               &:hover.button1 a{
+                color: white !important;
+                z-index: 9999;
+               }
+               
+               .overlay{
+                position: absolute;
+                border-radius: 5px;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                background-color: $font-color-primary;
+                transition: 0.3s ease-in-out;
+                width: 0;
+                height: 100%;
+            }
+                a{
+                    display: inline-block;
+                    height: 45px;
+                    width: 150px;
+                    background-color: $font-color-default;
+                    color: white;
+                    line-height: 45px;
+                    text-align: center;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    transition: 0.3s ease-in-out;
+                }
+            }
+            .button2{
+                a{
+                    color: $font-color-default;
+                    text-decoration: none;
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-left: 10px;
+                }
+                i{
+                    position: relative;
+                    cursor: pointer;
+                    &::after{
+                        position: absolute;
+                        content: "";
+                        width: 35px;
+                        height: 35px;
+                        border: 1px solid black;
+                        background-color: none;
+                        top: -8px;
+                        right: -10px;
+                        border-radius: 50px;
+                    }
+                }
+            }
+        }
+    }
+    .col-xl-5{
+        img{
+            max-width: 500px;
+            position: absolute;
+            &:nth-child(1){
+                z-index: 9999;
+            }
+            &:nth-child(2){
+                z-index: -9999;
+                margin-top: -40px;
+            }
+        }
+    }
+    }
+}
+}
+}
+@media(max-width:1220px){
+    main{
+        #home{
+            .col-xl-5{
+                img{
+                    width: 400px;
+                }
+            }
+            .col-xl-5{
+                h2{
+                    font-size: 50px;
+                }
+                h3{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    }

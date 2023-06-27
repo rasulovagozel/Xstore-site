@@ -1,0 +1,63 @@
+@use "../../utils/mixin" as *;
+@use '../../utils/varaible' as *;
+@use '../../utils/extend' as *;
+main{
+    #book{
+        margin-top: 50px;
+        .container{
+            margin: 0 auto;
+            font-family: $font-family;
+            background-color: $font-color-primary;
+            border-radius: 5px;
+            .row{
+                @include Flexible($align-i:center,$justify-c:center);
+                color: $font-color-white;
+                padding: 30px 10px;
+                .col-lg-9{
+                h2{
+                    @include Text($weight:$font-weight-600,$size:30px,$margin:0 0 8px 0);
+                }
+                h3{
+                    @include Text($weight:$font-weight-400,$size:15px,$margin:0 0 8px 0);
+                }
+                }
+                .col-lg-3{
+                    .button{
+                    position: relative;
+                    &:hover .overlay{
+                        width: 150px;
+                       }
+                   &:hover.button a{
+                    color: white !important;
+                    z-index: 9999;
+                   }
+                   .overlay{
+                    position: absolute;
+                    border-radius: 5px;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $font-color-default;
+                    transition: 0.3s ease-in-out;
+                    width: 0;
+                    height: 100%;
+                    }
+                    a{
+                        display: inline-block;
+                        color: $font-color-default;
+                        font-size: 15px;
+                        font-weight: 500;
+                        text-align: center;
+                        line-height: 40px;
+                        border-radius: 5px;
+                        text-decoration: none;
+                        width: 150px;
+                        height: 40px;
+                        background-color: $font-color-white;
+                    }
+                }
+            }
+            }
+        }
+    }
+}
